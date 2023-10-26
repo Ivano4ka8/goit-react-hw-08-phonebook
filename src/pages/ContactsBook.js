@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { ContactsList } from 'components/ContactsList/ContactList';
-import { selectContacts, selectIsLoading } from 'redux/selectors';
+import { selectContacts, selectIsLoading } from 'redux/contacts/selectors';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations';
+import { fetchContacts } from 'redux/contacts/contactsOperations';
 import { Loader } from 'components/Loader';
 
 export default function ContactsBook() {

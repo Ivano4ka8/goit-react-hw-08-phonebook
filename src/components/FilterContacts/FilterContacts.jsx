@@ -4,8 +4,8 @@ import {
 } from 'components/ContactsForm/ContactsForm.styled';
 import { FilterWrapper } from './FilterContacts.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilter } from 'redux/filterSlice';
-import { selectFilter } from 'redux/selectors';
+import { setFilter } from 'redux/contacts/filterSlice';
+import { selectFilter } from 'redux/contacts/selectors';
 
 export const FilterContacts = () => {
   const dispatch = useDispatch();

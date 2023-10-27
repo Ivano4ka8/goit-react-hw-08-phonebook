@@ -1,7 +1,4 @@
-import {
-  FormInput,
-  FormLabel,
-} from 'components/ContactsForm/ContactsForm.styled';
+import { FormInput, FormLabel } from 'components/Forms/ContactsForm.styled';
 import { FilterWrapper } from './FilterContacts.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from 'redux/contacts/filterSlice';

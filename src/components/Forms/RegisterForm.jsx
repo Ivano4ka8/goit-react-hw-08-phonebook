@@ -42,7 +42,6 @@ export const RegisterForm = () => {
             placeholder="Enter your name"
             onChange={handleChange}
             required
-            pattern="\w{3,16}"
           />
         </label>
 
@@ -65,7 +64,7 @@ export const RegisterForm = () => {
             placeholder="Enter your password"
             onChange={handleChange}
             required
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            
           />
         </label>
 

@@ -1,8 +1,10 @@
 export const theme = Object.freeze({
   colors: {
-    pink: '#fbaed2',
-    mainBackground: 'hsla(305, 61%, 61%, 1)',
-    violet: '#880085',
+    blue: '#aeccc6',
+    lightBlue: '#bbe9db',
+    lightGray: '#9ba6a5',
+    darkGray: '#757a79',
+    textColor: '000000',
   },
   fontSizes: {
     small: '14px',

@@ -4,7 +4,8 @@ import { selectContacts, selectIsLoading } from 'redux/contacts/selectors';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/contacts/contactsOperations';
-import { Loader } from 'components/Loader';
+import { Loader } from 'components/Loader/Loader';
+import { ContactsForm, FilterContacts } from 'components';
 
 export default function ContactsBook() {
   const dispatch = useDispatch();
@@ -18,6 +19,8 @@ export default function ContactsBook() {
     <>
       <motion.div>Now, your book of contacts is empty</motion.div>
       {isLoading && <Loader />}
+      <ContactsForm />
+      <FilterContacts />
       {contacts.length > 0 && <ContactsList />}
     </>
   );

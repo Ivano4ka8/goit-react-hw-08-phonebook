@@ -4,6 +4,9 @@
   "private": true,
   "homepage": "https://Ivano4ka8/goit-react-hw-08-phonebook",
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.15",
     "@reduxjs/toolkit": "^1.9.7",
     "axios": "^1.5.1",
     "framer-motion": "^10.16.4",

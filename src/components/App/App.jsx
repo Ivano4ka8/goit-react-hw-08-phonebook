@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router';
 import { lazy, useEffect } from 'react';
-import { RestrictedRoute } from 'components/RestrictedRoute';
-import { PrivateRoute } from 'components/PrivateRoute';
-import { Layout } from '../Layout';
+import { RestrictedRoute } from 'helpers/RestrictedRoute';
+import { PrivateRoute } from 'helpers/PrivateRoute';
+import { Layout } from '../Layout/Layout';
 import { selectIsRefreshing } from 'redux/auth/selectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { refreshUser } from 'redux/auth/operations';

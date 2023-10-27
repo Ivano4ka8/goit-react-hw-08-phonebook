@@ -48,7 +48,6 @@ export const LoginForm = () => {
             placeholder="Enter your password"
             onChange={handleChange}
             required
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
           />
         </label>
 

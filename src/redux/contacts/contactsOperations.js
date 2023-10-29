@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
@@ -8,6 +9,7 @@ export const fetchContacts = createAsyncThunk(
       const { data } = await axios.get('/contacts');
       return data;
     } catch (error) {
+      toast.error('Something went wrong');
       return rejectWithValue(error.message);
     }
   }
@@ -20,6 +22,7 @@ export const addContacts = createAsyncThunk(
       const { data } = await axios.post('/contacts', newContact);
       return data;
     } catch (error) {
+      toast.error('Something went wrong');
       return rejectWithValue(error.message);
     }
   }
@@ -32,18 +35,7 @@ export const deleteContact = createAsyncThunk(
       const { data } = await axios.delete(`contacts/${contactId}`, contactId);
       return data;
     } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  }
-);
-
-export const editContact = createAsyncThunk(
-  'contacts/editContact',
-  async ({ id, name, number }, { rejectWithValue }) => {
-    try {
-      const { data } = await axios.patch(`contacts/${id}`, { name, number });
-      return data;
-    } catch (error) {
+      toast.error('Something went wrong');
       return rejectWithValue(error.message);
     }
   }

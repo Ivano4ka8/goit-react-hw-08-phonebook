@@ -11,6 +11,13 @@ export const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: scale(1);
+  transition: transform 250ms linear;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
 `;
 export const UserMenuWrapper = styled.div`
   display: flex;

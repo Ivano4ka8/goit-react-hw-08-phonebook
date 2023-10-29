@@ -7,7 +7,7 @@ export const ContactsItem = styled.li`
   gap: ${props => props.theme.spacing(3)};
   width: 300px;
 
-  background-color: ${props => props.theme.colors.pink};
+  background-color: ${props => props.theme.colors.lightBlue};
   padding: ${props => props.theme.spacing(2)};
   border: 2px ${props => props.theme.colors.violet} solid;
 `;
@@ -15,7 +15,6 @@ export const ContactsItem = styled.li`
 export const ButtonDelete = styled.button`
   padding: ${props => props.theme.spacing(2)};
 
-  color: ${props => props.theme.colors.violet};
   font-size: ${props => props.theme.fontSizes.small};
   background-color: ${props => props.theme.colors.pink};
   border: 2px ${props => props.theme.colors.violet} solid;
@@ -26,8 +25,8 @@ export const ButtonDelete = styled.button`
   &:hover,
   &:focus {
     transform: scale(1);
-    background-color: ${props => props.theme.colors.violet};
-    color: ${props => props.theme.colors.pink};
-    border: 2px ${props => props.theme.colors.pink} solid;
+    background-color: white;
+
+    border: 2px ${props => props.theme.colors.darkGray} solid;
   }
 `;

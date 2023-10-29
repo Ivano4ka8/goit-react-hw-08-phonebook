@@ -40,12 +40,13 @@ export const FormInput = styled.input`
 
 export const ButtonSubmit = styled.button`
   padding: ${props => props.theme.spacing(3)};
+  width: 300px;
 
-  color: ${props => props.theme.colors.violet};
+  color: ${props => props.theme.colors.blue};
   font-weight: 600;
   font-size: ${props => props.theme.fontSizes.medium};
-  background-color: ${props => props.theme.colors.pink};
-  border: 2px ${props => props.theme.colors.violet} solid;
+  background-color: #000000;
+  border: 2px ${props => props.theme.colors.blue} solid;
   border-radius: 30px;
   transform: scale(0.9);
   transition: all 250ms linear;
@@ -53,8 +54,8 @@ export const ButtonSubmit = styled.button`
   &:hover,
   &:focus {
     transform: scale(1);
-    background-color: ${props => props.theme.colors.violet};
-    color: ${props => props.theme.colors.pink};
-    border: 2px ${props => props.theme.colors.pink} solid;
+    background-color: white;
+    border: 2px ${props => props.theme.colors.darkGray} solid;
+    color: ${props => props.theme.colors.lightGray};
   }
 `;

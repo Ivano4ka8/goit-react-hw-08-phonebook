@@ -7,6 +7,9 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { addContacts } from 'redux/contacts/contactsOperations';
 import { selectContacts } from 'redux/contacts/selectors';
+import { FormWrapper } from './RegisterForm.styled';
+
+import { toast } from 'react-toastify';
 
 export const ContactsForm = () => {
   const dispatch = useDispatch();
@@ -22,7 +25,7 @@ export const ContactsForm = () => {
     );
 
     if (isExist) {
-      alert(`${form.elements.name.value} is already in contacts.`);
+      toast.info('You have already had this name');
       form.reset();
       return;
     }
@@ -37,28 +40,32 @@ export const ContactsForm = () => {
   };
 
   return (
-    <Form onSubmit={onFormSubmit}>
-      <FormLabel>
-        Name
-        <FormInput
-          type="text"
-          name="name"
-          pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          required
-        />
-      </FormLabel>
-      <FormLabel>
-        Phone
-        <FormInput
-          type="tel"
-          name="number"
-          pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          required
-        />
-      </FormLabel>
-      <ButtonSubmit type="submit">Add contact</ButtonSubmit>
-    </Form>
+    <>
+      <FormWrapper>
+        <Form onSubmit={onFormSubmit}>
+          <FormLabel>
+            Name
+            <FormInput
+              type="text"
+              name="name"
+              pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+              title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+              required
+            />
+          </FormLabel>
+          <FormLabel>
+            Phone
+            <FormInput
+              type="tel"
+              name="number"
+              pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
+              title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+              required
+            />
+          </FormLabel>
+          <ButtonSubmit type="submit">Add contact</ButtonSubmit>
+        </Form>
+      </FormWrapper>
+    </>
   );
 };

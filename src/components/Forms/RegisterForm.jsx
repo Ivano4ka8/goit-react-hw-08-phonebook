@@ -1,6 +1,14 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
+import { ButtonSubmit } from 'components/Forms/ContactsForm.styled';
+import {
+  Form,
+  Input,
+  Label,
+  FormWrapper,
+  SectionForm,
+} from './RegisterForm.styled';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -31,45 +39,50 @@ export const RegisterForm = () => {
     setPassword('');
   };
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Name
-          <input
-            type="text"
-            name="name"
-            value={name}
-            placeholder="Enter your name"
-            onChange={handleChange}
-            required
-          />
-        </label>
+    <SectionForm>
+      <FormWrapper>
+        <Form onSubmit={handleSubmit}>
+          <Label for="name">
+            Name{' '}
+            <Input
+              id="name"
+              type="text"
+              name="name"
+              value={name}
+              placeholder="Enter your name"
+              onChange={handleChange}
+              required
+            />
+          </Label>
 
-        <label>
-          Email
-          <input
-            name="email"
-            value={email}
-            placeholder="Enter your email"
-            onChange={handleChange}
-            required
-          />
-        </label>
+          <Label for="email">
+            Email
+            <Input
+              id="email"
+              name="email"
+              value={email}
+              placeholder="Enter your email"
+              onChange={handleChange}
+              required
+            />
+          </Label>
 
-        <label>
-          Password
-          <input
-            name="password"
-            value={password}
-            placeholder="Enter your password"
-            onChange={handleChange}
-            required
-            
-          />
-        </label>
+          <Label for="password">
+            Password
+            <Input
+              id="password"
+              name="password"
+              type="password"
+              value={password}
+              placeholder="Enter your password"
+              onChange={handleChange}
+              required
+            />
+          </Label>
 
-        <button type="submit">Register</button>
-      </form>
-    </>
+          <ButtonSubmit type="submit">Register</ButtonSubmit>
+        </Form>
+      </FormWrapper>
+    </SectionForm>
   );
 };

@@ -9,10 +9,6 @@ export const ContactsList = () => {
   const visibleContacts = useSelector(selectVisibleContacts);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-
   return (
     <ContactList>
       {visibleContacts.map(contact => (
